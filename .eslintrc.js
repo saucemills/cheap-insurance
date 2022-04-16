@@ -4,9 +4,11 @@ module.exports = {
     'es2021': true,
   },
   'extends': [
+    'eslint:recommended',
     'plugin:react/recommended',
     'google',
     'plugin:@next/next/recommended',
+    'plugin:react/jsx-runtime',
   ],
   'parserOptions': {
     'ecmaFeatures': {
@@ -19,5 +21,7 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
   },
 };
