@@ -3,6 +3,7 @@
 import {useRouter} from 'next/router';
 import React from 'react';
 import {useState} from 'react';
+import qs from 'qs';
 
 export default function FormBody() {
   const router = useRouter();
@@ -41,40 +42,47 @@ export default function FormBody() {
     event.preventDefault();
 
     const data = {
-      email: event.target.email.value,
-      first_name: event.target.first_name.value,
-      last_name: event.target.last_name.value,
-      phone: event.target.phone.value,
-      birthdate: event.target.date.value,
-      address: event.target.address.value,
-      city: event.target.city.value,
-      state: event.target.state.value,
-      zipcode: event.target.zip.value,
-      rent_own: event.target.rent_own.value,
-      cars: cars,
+      "Name": event.target.first_name.value + " " + event.target.last_name.value,
+      "Address1": event.target.address.value,
+      "Email": event.target.email.value,
+      "City": event.target.city.value,
+      "State": event.target.state.value,
+      "ZipCode": event.target.zip.value,
+      "Phone": event.target.phone.value,
+      "Custom1": event.target.date.value,
+      "Custom2": event.target.rent_own.value
     };
 
-    const JSONdata = JSON.stringify(data);
+    
+    let customCount = 3;
+    let carData = {}
+    for (let i = 0; i < cars.length; i++) {
+      carData[`Custom${customCount.toString()}`] = cars[i]['carYear'];
+      customCount++;
+      carData[`Custom${customCount.toString()}`] = cars[i]['carMake'];
+      customCount++;
+      carData[`Custom${customCount.toString()}`] = cars[i]['carModel'];
+      customCount++;
+    }
 
-    const endpoint = '/api/form';
+    const endpoint = 'https://www.blitzleadmanager.com/login/Form.aspx?id=84183cd3-132c-4a55-af6e-450e8cb24704&mode=silent'
 
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin': '*'
       },
-      body: JSONdata,
+      mode: 'no-cors'
     };
-
-    const response = await fetch(endpoint, options);
-
-    const result = await response.json();
-    console.log(result);
+    const response = await fetch(endpoint + "&" + qs.stringify(data) + "&" + qs.stringify(carData), options);
   };
 
 
   return (
     <section className='max-w-screen-xl px-4 my-12 lg:max-w-4xl mx-auto mt-8'>
+      <h1 className='text-center text-xl font-bold'>Get a quote</h1>
+      <p className='text-center text-sm'>Fill out the form below to receive a quote.</p>
       <form onSubmit={handleSubmit}>
         <h2 className='mb-2'>Personal Info:</h2>
         <div className="relative z-0 mb-6 w-full group">
