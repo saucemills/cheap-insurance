@@ -160,7 +160,7 @@ export default function FormBody() {
             </div>
             <div className="relative z-0 mb-6 w-full group">
               <input
-                type="date"
+                type="text"
                 pattern="\d{1,2}/\d{1,2}/\d{4}"
                 name="date"
                 id="date"
