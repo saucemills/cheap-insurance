@@ -3,9 +3,11 @@
 import React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Hero() {
   const [zipcode, setZipcode] = useState("");
+  const router = useRouter();
 
   const handleChange = (e) => {
     setZipcode(e.target.value);
@@ -13,26 +15,7 @@ function Hero() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const data = {
-      zipcode: e.target.zipcode.value,
-    };
-    const JSONdata = JSON.stringify(data);
-
-    const endpoint = "/api/form";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-
-    const result = await response.json();
-    console.log(result);
+    router.push(`/form?zip=${zipcode}`);
   };
   return (
     <section className="mt-7 mx-auto max-w-screen-xl pb-4 px-4 items-center lg:flex md:px-8">
