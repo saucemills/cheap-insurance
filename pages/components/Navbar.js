@@ -9,7 +9,7 @@ function Navbar() {
       <div className="container flex flex-wrap justify-between items-center mx-auto max-w-6xl">
         <span className="self-center text-lg sm:text-xl font-semibold whitespace-nowrap text-white">
           <Link href="/" className="flex items-center cursor-pointer">
-            CHEAPER INSURANCE NEVADA
+            Cheaper Insurance Nevada
           </Link>
         </span>
 

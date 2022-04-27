@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container flex flex-wrap justify-center items-center mx-auto max-w-6xl">
         <a href="https://flowbite.com" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
-            CHEAPER INSURANCE NEVADA
+            Cheaper Insurance Nevada
           </span>
         </a>
       </div>
