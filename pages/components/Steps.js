@@ -23,9 +23,9 @@ function Steps() {
               />
             </svg>
           </div>
-          <h6 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
+          <h2 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
             1. Answer simple questions
-          </h6>
+          </h2>
           <p className="mb-2 text-gray-700">
             Just follow the prompts to tell us about your vehicle and who needs
             coverage.
@@ -53,9 +53,9 @@ function Steps() {
               />
             </svg>
           </div>
-          <h6 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
+          <h2 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
             2. We process the information
-          </h6>
+          </h2>
           <p className="mb-2 text-gray-700">
             Behind the scenes, our innovative technology hones in on which
             insurers are best for drivers like you.
@@ -78,9 +78,9 @@ function Steps() {
               />
             </svg>
           </div>
-          <h6 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
+          <h2 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
             3. Compare and save
-          </h6>
+          </h2>
           <p className="mb-2 text-gray-700">
             We give you the best rates and coverages for you to evaluate and
             make the decision best for you.
