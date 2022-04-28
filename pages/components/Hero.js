@@ -57,6 +57,7 @@ function Hero() {
       <div className="flex-1 text-center mt-8 lg:mt-0 lg:ml-3">
         <img
           src="cars.svg"
+          alt="cars on street"
           className="w-full mx-auto sm:w-10/12  lg:w-full stroke-blue-700"
         />
       </div>
