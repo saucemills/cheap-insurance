@@ -26,10 +26,10 @@ function Steps() {
           <h6 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
             1. Answer simple questions
           </h6>
-          <div className="mb-2 text-gray-700">
+          <p className="mb-2 text-gray-700">
             Just follow the prompts to tell us about your vehicle and who needs
             coverage.
-          </div>
+          </p>
         </div>
         <div className="px-8 text-center sm:px-0">
           <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
@@ -56,10 +56,10 @@ function Steps() {
           <h6 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
             2. We process the information
           </h6>
-          <div className="mb-2 text-gray-700">
+          <p className="mb-2 text-gray-700">
             Behind the scenes, our innovative technology hones in on which
             insurers are best for drivers like you.
-          </div>
+          </p>
         </div>
         <div className="px-8 text-center sm:px-0">
           <div className="flex items-center justify-center w-10 h-10 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-12 sm:h-12">
@@ -81,10 +81,10 @@ function Steps() {
           <h6 className="mb-2 text-sm font-bold leading-5 tracking-wider uppercase">
             3. Compare and save
           </h6>
-          <div className="mb-2 text-gray-700">
+          <p className="mb-2 text-gray-700">
             We give you the best rates and coverages for you to evaluate and
             make the decision best for you.
-          </div>
+          </p>
         </div>
       </div>
     </div>
