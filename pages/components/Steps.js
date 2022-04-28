@@ -58,7 +58,7 @@ function Steps() {
           </h2>
           <p className="mb-2 text-gray-700">
             Behind the scenes, our innovative technology hones in on which
-            insurers are best for drivers like you.
+            insurers will help you save the most.
           </p>
         </div>
         <div className="px-8 text-center sm:px-0">
@@ -82,8 +82,8 @@ function Steps() {
             3. Compare and save
           </h2>
           <p className="mb-2 text-gray-700">
-            We give you the best rates and coverages for you to evaluate and
-            make the decision best for you.
+            We give you the best rates and auto insurance coverages for you to
+            evaluate and make the decision best for you.
           </p>
         </div>
       </div>

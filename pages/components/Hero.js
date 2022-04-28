@@ -26,7 +26,8 @@ function Hero() {
         </h1>
         <p className="text-gray-500 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
           Just by answering a few simple questions about yourself and your
-          vehicle, you can then compare rates with the most reputable companies.
+          vehicle, you can then compare rates with the most reputable companies
+          to save on your auto insurance.
         </p>
         <div>
           <form
