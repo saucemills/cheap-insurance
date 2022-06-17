@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable require-jsdoc */
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import qs from "qs";
