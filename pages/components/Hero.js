@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-spacing */
+/* eslint-disable quotes */
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 import React from "react";

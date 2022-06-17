@@ -1,3 +1,8 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable indent */
+/* eslint-disable camelcase */
+/* eslint-disable quotes */
+/* eslint-disable object-curly-spacing */
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 import { useRouter } from "next/router";

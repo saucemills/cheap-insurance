@@ -1,8 +1,12 @@
+/* eslint-disable object-curly-spacing */
+/* eslint-disable quotes */
+/* eslint-disable max-len */
 import React from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { useRouter } from "next/router";
 
+// eslint-disable-next-line require-jsdoc
 function success() {
   const router = useRouter();
 
