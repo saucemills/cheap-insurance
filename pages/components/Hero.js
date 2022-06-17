@@ -1,21 +1,43 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 import React from "react";
-import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import qs from "qs";
 
 function Hero() {
-  const [zipcode, setZipcode] = useState("");
   const router = useRouter();
 
-  const handleChange = (e) => {
-    setZipcode(e.target.value);
-  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    router.push(`/form?zip=${zipcode}`);
+    const data = {
+      Name: `${event.target.first_name.value} ${event.target.last_name.value}`,
+      Email: event.target.email.value,
+      Phone: event.target.phone.value,
+    };
+
+    const endpoint =
+      "https://www.blitzleadmanager.com/login/Form.aspx?id=84183cd3-132c-4a55-af6e-450e8cb24704&mode=silent";
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*",
+      },
+      mode: "no-cors",
+    };
+
+    const response = await fetch(`${endpoint}&${qs.stringify(data)}`, options);
+    console.log(response);
+
+    const fullData = {
+      FirstName: event.target.first_name.value,
+      LastName: event.target.last_name.value,
+      Email: event.target.email.value,
+      Phone: event.target.phone.value,
+    };
+    router.push(`/form?${qs.stringify(fullData)}`);
   };
   return (
     <section className="mt-7 mx-auto max-w-screen-xl pb-4 px-4 items-center lg:flex md:px-8">
@@ -31,27 +53,89 @@ function Hero() {
         </p>
         <div>
           <form
-            action="/api/form"
-            method="post"
             className="items-center space-y-3 sm:justify-center sm:space-x-3 sm:space-y-0 sm:flex lg:justify-start"
             onSubmit={handleSubmit}
           >
-            <input
-              type="text"
-              id="zipcode"
-              name="zipcode"
-              required
-              onChange={handleChange}
-              value={zipcode}
-              placeholder="Enter your zipcode"
-              className="text-gray-500 border outline-none p-3 rounded-md w-full sm:w-72"
-            />
-            <button
-              type="submit"
-              className="outline-none bg-gray-700 text-white text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto"
-            >
-              <Link href={`/form?zip=${zipcode}`}>Get Quote</Link>
-            </button>
+            <div>
+              <div className="relative z-0 mb-6 w-full group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Email address
+                </label>
+              </div>
+              <div className="grid xl:grid-cols-2 xl:gap-6">
+                <div className="flex">
+                  <div className="relative z-0 mb-6 pr-2 w-full group">
+                    <input
+                      type="text"
+                      name="first_name"
+                      id="first_name"
+                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      htmlFor="first_name"
+                      className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >
+                      First name
+                    </label>
+                  </div>
+                  <div className="relative z-0 mb-6 w-full group">
+                    <input
+                      type="text"
+                      name="last_name"
+                      id="last_name"
+                      className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      htmlFor="last_name"
+                      className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    >
+                      Last name
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="grid xl:grid-cols-2 xl:gap-6">
+                <div className="relative z-0 mb-6 w-full group">
+                  <input
+                    type="tel"
+                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                    name="phone"
+                    id="phone"
+                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    required
+                  />
+                  <label
+                    htmlFor="phone"
+                    className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Phone number
+                  </label>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="outline-none bg-gray-700 text-white text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto"
+              >
+                Get Quote
+              </button>
+            </div>
           </form>
         </div>
       </div>

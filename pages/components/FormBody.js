@@ -4,8 +4,11 @@ import qs from "qs";
 
 export default function FormBody() {
   const router = useRouter();
-  const { zip } = router.query;
-  const [zipcode, setZipcode] = useState(zip || "");
+  const { FirstName, LastName, Email, Phone } = router.query;
+  const [first_name, setFirst_Name] = useState(FirstName || "");
+  const [last_name, setLast_Name] = useState(LastName || "");
+  const [email, setEmail] = useState(Email || "");
+  const [phone, setPhone] = useState(Phone || "");
   const [cars, setCars] = useState([
     {
       carYear: "",
@@ -94,6 +97,8 @@ export default function FormBody() {
               type="email"
               name="email"
               id="email"
+              value={email || ""}
+              onChange={(e) => setEmail(e.target.value)}
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -112,6 +117,8 @@ export default function FormBody() {
                 type="text"
                 name="first_name"
                 id="first_name"
+                value={first_name || ""}
+                onChange={(e) => setFirst_Name(e.target.value)}
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
@@ -128,6 +135,8 @@ export default function FormBody() {
                 type="text"
                 name="last_name"
                 id="last_name"
+                value={last_name || ""}
+                onChange={(e) => setLast_Name(e.target.value)}
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
@@ -147,6 +156,8 @@ export default function FormBody() {
                 pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                 name="phone"
                 id="phone"
+                value={phone || ""}
+                onChange={(e) => setPhone(e.target.value)}
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
@@ -230,8 +241,6 @@ export default function FormBody() {
                 type="text"
                 name="zip"
                 id="zip"
-                value={zipcode || ""}
-                onChange={(e) => setZipcode(e.target.value)}
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
