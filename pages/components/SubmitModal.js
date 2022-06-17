@@ -1,3 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable max-len */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable require-jsdoc */
 export default function SubmitModal() {
   return (
     <div

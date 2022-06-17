@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 import Link from "next/link";
