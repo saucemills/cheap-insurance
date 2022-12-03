@@ -4,15 +4,9 @@
 import React from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { useRouter } from "next/router";
 
 // eslint-disable-next-line require-jsdoc
 function success() {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push("/");
-  };
   return (
     <main className="h-screen m-0">
       <div className="min-h-full mb-[-40px]">
