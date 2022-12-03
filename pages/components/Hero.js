@@ -133,7 +133,7 @@ function Hero() {
               </div>
               <button
                 type="submit"
-                className="outline-none bg-gray-700 text-white mr-3 text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto"
+                className="outline-none mb-2 bg-gray-700 text-white mr-3 text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto"
               >
                 Get Quote
               </button>
