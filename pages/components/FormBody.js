@@ -95,8 +95,24 @@ export default function FormBody() {
     <>
       <section className="max-w-screen-xl px-4 my-12 lg:max-w-4xl mx-auto mt-6">
         <a className="flex justify-center mb-2" href="tel:7023897341">
-          <button className="outline-none bg-gray-700 text-white text-center px-4 py-3 rounded-md shadow w-1/2 ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto">
-            Call Us Now
+          <button className="outline-none bg-blue-700 hover:bg-blue-800 text-white text-center px-4 py-3 rounded-md shadow w-1/2 ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto">
+            <div className="flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 mr-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                />
+              </svg>
+              Call Us Now!
+            </div>
           </button>
         </a>
         <h1 className="text-center text-xl font-bold">Get a quote</h1>
