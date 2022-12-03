@@ -93,7 +93,12 @@ export default function FormBody() {
 
   return (
     <>
-      <section className="max-w-screen-xl px-4 my-12 lg:max-w-4xl mx-auto mt-8$">
+      <section className="max-w-screen-xl px-4 my-12 lg:max-w-4xl mx-auto mt-6">
+        <a className="flex justify-center mb-2" href="tel:+7023897341">
+          <button className="outline-none bg-gray-700 text-white text-center px-4 py-3 rounded-md shadow w-1/2 ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto">
+            Call Us Now
+          </button>
+        </a>
         <h1 className="text-center text-xl font-bold">Get a quote</h1>
         <p className="text-center text-sm">
           Fill out the form below to receive a quote.
