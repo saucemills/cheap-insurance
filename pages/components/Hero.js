@@ -137,7 +137,7 @@ function Hero() {
               >
                 Get Quote
               </button>
-              <a href="tel:+7023897341">
+              <a href="tel:7023897341">
                 <button
                   type="button"
                   className="outline-none bg-gray-700 text-white text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto"
