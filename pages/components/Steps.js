@@ -83,8 +83,8 @@ function Steps() {
             3. Compare and save
           </h2>
           <p className="mb-2 text-gray-700">
-            We give you the best rates and auto insurance coverages for you to
-            evaluate and make the decision best for you.
+            We give you the best rates and insurance coverages to evaluate and
+            make the decision best for you.
           </p>
         </div>
       </div>

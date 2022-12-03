@@ -8,6 +8,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import qs from "qs";
+import Cleave from "cleave.js/react";
 
 export default function FormBody() {
   const router = useRouter();
@@ -177,7 +178,12 @@ export default function FormBody() {
               </label>
             </div>
             <div className="relative z-0 mb-6 w-full group">
-              <input
+              <Cleave
+                options={{
+                  date: true,
+                  delimiter: "/",
+                  datePattern: ["m", "d", "Y"],
+                }}
                 type="text"
                 pattern="\d{1,2}/\d{1,2}/\d{4}"
                 name="date"
