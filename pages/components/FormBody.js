@@ -288,20 +288,28 @@ export default function FormBody() {
             </div>
           </div>
           <div className="relative z-0 w-full sm:w-1/3 mb-6 group">
+            <label className="text-gray-700"> Rent or Own:</label>
             <input
-              type="text"
+              className="mx-2"
+              type="radio"
+              id="rent"
               name="rent_own"
-              id="rent_own"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" "
-              required
+              value="rent"
             />
-            <label
-              htmlFor="rent_own"
-              className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Rent or Own
+            <label className="mr-2 text-sm" htmlFor="rent">
+              Rent
             </label>
+            <input
+              className="mx-2"
+              type="radio"
+              id="own"
+              name="rent_own"
+              value="own"
+            />
+            <label className="text-sm" htmlFor="own">
+              Own
+            </label>
+            <br />
           </div>
           <h2 className="mb-2">Car Info:</h2>
           {cars.map((input, index) => (
